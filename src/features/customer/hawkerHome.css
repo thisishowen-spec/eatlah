@@ -1,0 +1,211 @@
+/* EatLah 顾客端熟食中心首页 — 1:1 还原自 eatlah-customer-homepage.html
+   作用域用 .hawker-home 前缀防与 eatlah.css 冲突 */
+.hawker-home {
+  --hh-green: #0b7a53;
+  --hh-green-deep: #064e3b;
+  --hh-mint: #eafbf1;
+  --hh-warm: #fffdf7;
+  --hh-rice: #fff8ed;
+  --hh-ink: #1f2937;
+  --hh-muted: #6f7b75;
+  --hh-orange: #f97316;
+  --hh-line: rgba(31, 41, 55, .08);
+  --hh-shadow: 0 16px 42px rgba(18, 32, 25, .07);
+
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  color: var(--hh-ink);
+  background:
+    radial-gradient(circle at 86% 4%, rgba(249, 115, 22, .08), transparent 190px),
+    linear-gradient(180deg, #f2fff7 0%, var(--hh-warm) 35%, #fffaf0 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.hawker-home * { box-sizing: border-box; }
+.hawker-home button, .hawker-home input { font: inherit; }
+.hawker-home button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+
+.hawker-home .scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding: calc(env(safe-area-inset-top, 0px) + 26px) 22px calc(env(safe-area-inset-bottom, 0px) + 28px);
+  scroll-behavior: smooth;
+}
+.hawker-home .scroll::-webkit-scrollbar,
+.hawker-home .tabs::-webkit-scrollbar { display: none; }
+
+.hawker-home .top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+.hawker-home .brand { display: grid; gap: 10px; align-content: center; min-width: 0; }
+.hawker-home .brand-mark {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; min-width: 0; min-height: 48px; border: 0; border-radius: 0; padding: 0;
+  color: var(--hh-green); background: transparent;
+  font-size: 19px; line-height: 1.15; font-weight: 900;
+  text-align: left;
+}
+.hawker-home .brand-mark > i { flex: none; }
+.hawker-home .brand-mark span {
+  flex: 1 1 auto; min-width: 0;
+}
+.hawker-home[data-lang="en"] .brand-mark { font-size: 16px; font-weight: 800; }
+.hawker-home .address {
+  margin: 0; color: var(--hh-muted); font-size: 13px;
+}
+.hawker-home .logo-img {
+  width: 56px; height: 56px; border-radius: 16px;
+  object-fit: cover; display: block;
+  box-shadow: 0 10px 26px rgba(11, 122, 83, .28);
+}
+
+.hawker-home .location-menu {
+  display: none;
+  margin-top: 14px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 8px;
+  box-shadow: var(--hh-shadow);
+  border: 1px solid var(--hh-line);
+}
+.hawker-home .location-menu.show {
+  display: grid; gap: 4px;
+  max-height: 50vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.hawker-home .location-menu.show::-webkit-scrollbar { display: none; }
+.hawker-home .location-option {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center;
+  gap: 10px; padding: 12px 14px; border-radius: 12px;
+  background: transparent; border: 0; text-align: left; color: var(--hh-ink);
+}
+.hawker-home .location-option:hover { background: var(--hh-mint); }
+.hawker-home .location-option.active { background: var(--hh-mint); color: var(--hh-green-deep); }
+.hawker-home .location-option b { font-size: 15px; font-weight: 800; display: block; }
+.hawker-home .location-option small { color: var(--hh-muted); font-size: 12px; }
+.hawker-home .location-option i { color: var(--hh-green); font-size: 18px; }
+.hawker-home .location-search {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 12px; border-radius: 12px;
+  background: var(--hh-rice); border: 1px solid var(--hh-line);
+  position: sticky; top: 0; z-index: 1;
+  margin-bottom: 4px;
+}
+.hawker-home .location-search i { color: var(--hh-muted); font-size: 16px; }
+.hawker-home .location-search input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent;
+  font-size: 14px; color: var(--hh-ink);
+}
+.hawker-home .location-search-clear {
+  border: 0; background: transparent; color: var(--hh-muted); padding: 0;
+  display: inline-flex; align-items: center;
+}
+.hawker-home .location-empty {
+  padding: 18px 12px; text-align: center; color: var(--hh-muted); font-size: 13px;
+}
+
+.hawker-home .search {
+  margin-top: 18px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--hh-line);
+  box-shadow: var(--hh-shadow);
+}
+.hawker-home .search i { color: var(--hh-muted); font-size: 18px; }
+.hawker-home .search input {
+  flex: 1; border: 0; outline: 0; background: transparent;
+  font-size: 15px; color: var(--hh-ink);
+}
+
+.hawker-home .tabs {
+  margin-top: 16px;
+  display: flex; gap: 8px;
+  overflow-x: auto; scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.hawker-home .tab {
+  flex: 0 0 auto;
+  border: 1px solid var(--hh-line);
+  background: #fff; color: var(--hh-ink);
+  padding: 8px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 700;
+  white-space: nowrap;
+}
+.hawker-home .tab.active {
+  background: var(--hh-green); color: #fff; border-color: var(--hh-green);
+}
+
+.hawker-home .section-title {
+  margin-top: 22px;
+  display: flex; align-items: baseline; justify-content: space-between;
+}
+.hawker-home .section-title h2 { margin: 0; font-size: 20px; font-weight: 900; color: var(--hh-ink); }
+.hawker-home .section-title span { color: var(--hh-muted); font-size: 13px; font-weight: 700; }
+
+.hawker-home .list {
+  margin-top: 12px;
+  display: grid; gap: 14px;
+}
+.hawker-home .shop-card {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  gap: 14px; align-items: center;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--hh-line);
+  border-radius: 20px;
+  box-shadow: var(--hh-shadow);
+  text-align: left;
+}
+.hawker-home .shop-card img {
+  width: 76px; height: 76px; border-radius: 16px; object-fit: cover;
+  background: var(--hh-rice);
+}
+.hawker-home .shop-card .img-fallback {
+  width: 76px; height: 76px; border-radius: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--hh-mint); color: var(--hh-green); font-size: 30px;
+}
+.hawker-home .shop-copy { display: grid; gap: 4px; min-width: 0; }
+.hawker-home .shop-copy b {
+  font-size: 16px; font-weight: 800; color: var(--hh-ink);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.hawker-home .shop-copy small {
+  color: var(--hh-muted); font-size: 12px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.hawker-home .shop-copy em {
+  font-style: normal; color: var(--hh-green-deep); font-size: 12px; font-weight: 700;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.hawker-home .shop-meta {
+  display: grid; justify-items: end; align-items: center; gap: 4px;
+  min-width: 64px;
+}
+.hawker-home .shop-meta .status {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 22px; padding: 0 8px; border-radius: 999px;
+  background: var(--hh-mint); color: var(--hh-green-deep);
+  font-size: 11px; font-weight: 800;
+}
+.hawker-home .shop-meta .status.closed {
+  background: #fef2f2; color: #b91c1c;
+}
+.hawker-home .shop-meta .eta { color: var(--hh-muted); font-size: 12px; font-weight: 700; }
+.hawker-home .shop-meta i { color: var(--hh-muted); font-size: 18px; }
+
+.hawker-home .empty {
+  display: none;
+  margin-top: 22px; padding: 22px;
+  background: #fff; border: 1px dashed var(--hh-line); border-radius: 18px;
+  color: var(--hh-muted); text-align: center; font-size: 14px;
+}
+.hawker-home .empty.show { display: block; }
