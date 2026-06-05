@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  Mobile-first QR ordering for hawker stalls, small restaurants, and independent food businesses.
+  AI powered QR ordering for hawker stalls, small restaurants, and independent food businesses.
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 
 ## English
 
-eatlah is a mobile-first QR ordering system for hawker stalls, small restaurants, and independent food businesses.
+eatlah is a AI powered QR ordering system for hawker stalls, small restaurants, and independent food businesses.
 
 It helps small merchants go digital faster by turning a physical menu photo into a live QR ordering page in minutes. Merchants can review their menu, publish a QR ordering page, receive orders, and manage simple payments from one mobile-first experience.
 
