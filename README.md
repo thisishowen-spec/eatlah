@@ -61,10 +61,13 @@ eatlah uses AI-assisted menu digitisation to help merchants launch a QR ordering
 5. **Order management dashboard**  
    Merchants can receive, manage, and update customer orders from a simple mobile dashboard.
 
-6. **Flexible payment support**  
+6. **Voice order reminders**  
+   When a merchant receives a new order or an order remains unhandled for too long, eatlah can automatically read out the order details and reminder status. This helps busy stall owners keep track of incoming orders while cooking, reducing missed orders, wrong orders, and customer waiting time.
+
+7. **Flexible payment support**  
    eatlah supports PayNow QR-code payment instructions and cash payment, so merchants can keep payment simple and familiar.
 
-7. **Simple mobile-first design**  
+8. **Simple mobile-first design**  
    The interface is designed to be clear, fast, and easy to use for small merchants, including older hawker stall owners.
 
 ## Live Links
@@ -85,6 +88,7 @@ eatlah uses AI-assisted menu digitisation to help merchants launch a QR ordering
 - Tailwind CSS
 - Supabase
 - Gemini VLM / LLM
+- TTS voice reminders
 
 ## Run Locally
 
@@ -140,10 +144,13 @@ eatlah 通过 AI 辅助菜单数字化，让商家可以快速把纸质菜单变
 5. **订单管理工作台**  
    商家可以在手机端接收订单、更新制作状态，并管理顾客订单。
 
-6. **灵活支付方式**  
+6. **语音播报提醒**  
+   当商家收到新订单，或订单长时间未处理时，系统会自动语音播报订单内容和提醒状态。摊主即使在忙碌出餐时，也能及时接单，减少漏单、错单和顾客等待时间。
+
+7. **灵活支付方式**  
    eatlah 支持 PayNow 二维码付款说明和现金付款，方便商家沿用熟悉的收款方式。
 
-7. **简单移动端设计**  
+8. **简单移动端设计**  
    界面强调大字体、大按钮、清晰层级，适合小餐饮商家和年长摊主使用。
 
 ## 线上链接
@@ -164,6 +171,7 @@ eatlah 通过 AI 辅助菜单数字化，让商家可以快速把纸质菜单变
 - Tailwind CSS
 - Supabase
 - Gemini VLM / LLM
+- TTS 语音播报
 
 ## 本地运行
 
